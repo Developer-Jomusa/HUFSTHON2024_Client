@@ -6,7 +6,8 @@ import {SafeAreaProvider} from "react-native-safe-area-context";
 import {I18nextProvider} from "react-i18next";
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {i18n} from "./i18n.config.ts";
-import First from "./First.tsx";
+import Onboarding from "./screen/Onboarding.tsx";
+import Splash from "./screen/Splash.tsx";
 
 
 function App(): React.JSX.Element {
@@ -16,7 +17,7 @@ function App(): React.JSX.Element {
             StatusBar.setBackgroundColor('transparent');
             StatusBar.setTranslucent(true);
         }
-        StatusBar.setBarStyle('light-content')
+        StatusBar.setBarStyle('dark-content')
         StatusBar.setHidden(false);
     }, []);
 
@@ -37,13 +38,17 @@ function App(): React.JSX.Element {
             <I18nextProvider i18n={i18n}>
                 <NavigationContainer theme={theme}>
                     <Stack.Navigator
-                        initialRouteName="First"
+                        initialRouteName="Splash"
                         screenOptions={{
                             headerShown: false,
                         }}>
                         <Stack.Screen
-                            name="First"
-                            component={First}
+                            name="Splash"
+                            component={Splash}
+                        />
+                        <Stack.Screen
+                            name="Onboarding"
+                            component={Onboarding}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>
