@@ -1,5 +1,4 @@
 import {Platform, StatusBar} from "react-native";
-import Unity, {UnityPlayerRefs} from "./util/Unity.tsx";
 import React, {useEffect, useRef} from "react";
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import {SafeAreaProvider} from "react-native-safe-area-context";
@@ -8,6 +7,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {i18n} from "./i18n.config.ts";
 import Onboarding from "./screen/Onboarding.tsx";
 import Splash from "./screen/Splash.tsx";
+import Home from "./screen/Home.tsx";
 
 
 function App(): React.JSX.Element {
@@ -21,7 +21,6 @@ function App(): React.JSX.Element {
         StatusBar.setHidden(false);
     }, []);
 
-    const unityPlayerRef = useRef<UnityPlayerRefs>(null);
     const Stack = createNativeStackNavigator();
 
     const theme = {
@@ -49,6 +48,10 @@ function App(): React.JSX.Element {
                         <Stack.Screen
                             name="Onboarding"
                             component={Onboarding}
+                        />
+                        <Stack.Screen
+                            name="Home"
+                            component={Home}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>
