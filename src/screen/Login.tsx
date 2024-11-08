@@ -5,7 +5,7 @@ import HomeStyle from "../style/Home.style.tsx";
 import JuaText from "../component/JuaText.tsx";
 import BasicText from "../component/BasicText.tsx";
 
-const Home = ({navigation}: any) => {
+const Login = ({navigation}: any) => {
 
     const unityPlayerRef = useRef<UnityPlayerRefs>(null);
 
@@ -20,4 +20,4 @@ const Home = ({navigation}: any) => {
     );
 };
 
-export default Home;
+export default Login;

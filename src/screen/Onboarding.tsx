@@ -33,7 +33,7 @@ const Onboarding = ({ navigation }: any) => {
                 }).start();
             });
         } else {
-            navigation.navigate("Home");
+            navigation.navigate("Login");
         }
     };
 

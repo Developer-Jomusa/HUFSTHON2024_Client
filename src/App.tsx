@@ -7,7 +7,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {i18n} from "./i18n.config.ts";
 import Onboarding from "./screen/Onboarding.tsx";
 import Splash from "./screen/Splash.tsx";
-import Home from "./screen/Home.tsx";
+import Login from "./screen/Login.tsx";
 
 
 function App(): React.JSX.Element {
@@ -50,8 +50,8 @@ function App(): React.JSX.Element {
                             component={Onboarding}
                         />
                         <Stack.Screen
-                            name="Home"
-                            component={Home}
+                            name="Login"
+                            component={Login}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>
