@@ -44,6 +44,9 @@ const stylesheet = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
     },
+    JuaFont:{
+        fontFamily: "Jua-Regular",
+    }
 });
 
 export default stylesheet;
