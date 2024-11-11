@@ -1,5 +1,5 @@
 ﻿import { View, Animated } from "react-native";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import styles from "../style/stylesheet.tsx";
 import OnboardingStyle from "../style/Onboarding.style.tsx";
 import LottieView from "lottie-react-native";

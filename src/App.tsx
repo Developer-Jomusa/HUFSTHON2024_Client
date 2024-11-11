@@ -1,5 +1,5 @@
 import {Platform, StatusBar} from "react-native";
-import React, {useEffect, useRef} from "react";
+import React, {useEffect,} from "react";
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import {I18nextProvider} from "react-i18next";
