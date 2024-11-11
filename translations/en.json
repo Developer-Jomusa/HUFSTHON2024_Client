@@ -1,3 +1,14 @@
 ﻿{
-  "main_title" : ""
+  "main_title" : "",
+  "login_title":"Welcome to HUFSTHON!",
+   "login_email": "Please enter your email",
+  "login_password": "Please enter your password",
+  "login_forget_pw": "Forgot your password?",
+  "login_button":"Login",
+  "login_isUser": "Not a member?",
+  "login_regist": "Sign Up",
+  "login_other": "Or start with a social account"
+
+
+
 }

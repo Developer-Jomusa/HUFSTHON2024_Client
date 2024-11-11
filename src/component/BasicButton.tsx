@@ -9,13 +9,13 @@ import BasicText from "./BasicText.tsx";
 
 export interface BasicButtonProps {
     style?: StyleProp<ViewStyle>;
-    text: string;
+    text?: string;
     textSize: number;
-    textWeight: string;
-    onPress: () => void;
-    disabled: boolean;
-    enabledColor: string;
-    disabledColor: string;
+    textWeight?: string;
+    onPress?: () => void;
+    disabled?: boolean;
+    enabledColor?: string;
+    disabledColor?: string;
 }
 
 const BasicButton = ({

@@ -7,7 +7,6 @@ export type SVGIconProps = SvgProps & {
 
 const SVG = ({ name, ...props } : SVGIconProps) => {
     const Icon = svg[name];
-
     return (
         <Icon {...props} />
     );
