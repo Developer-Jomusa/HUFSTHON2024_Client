@@ -1,5 +1,5 @@
 import {Platform, StatusBar} from "react-native";
-import React, {useEffect,} from "react";
+import React, {useEffect, useRef,} from "react";
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import {I18nextProvider} from "react-i18next";
@@ -9,9 +9,8 @@ import Onboarding from "./screen/Onboarding.tsx";
 import Splash from "./screen/Splash.tsx";
 import Login from "./screen/Login.tsx";
 import SignUp from './screen/SignUp.tsx';
-import { UnityProvider } from "./component/UnityContext.tsx";
 function App(): React.JSX.Element {
-
+    
     useEffect(() => {
         if (Platform.OS == 'android') {
             StatusBar.setBackgroundColor('transparent');
@@ -32,7 +31,6 @@ function App(): React.JSX.Element {
     };
     
     return (
-    <UnityProvider>
         <SafeAreaProvider>
             <I18nextProvider i18n={i18n}>
                 
@@ -41,7 +39,6 @@ function App(): React.JSX.Element {
                         initialRouteName="Splash"
                         screenOptions={{
                             headerShown: false,
-                            
                         }}>
                         <Stack.Screen
                             name="Splash"
@@ -64,8 +61,6 @@ function App(): React.JSX.Element {
                 </NavigationContainer>
             </I18nextProvider>
         </SafeAreaProvider>
-    </UnityProvider>
-        
     );
 }
 
