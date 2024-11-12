@@ -5,16 +5,17 @@ import HomeStyle from "../style/Home.style.tsx";
 import LoginStyle from "../style/Login.style.tsx";
 import JuaText from "../component/JuaText.tsx";
 import BasicText from "../component/BasicText.tsx";
-import { useTranslation } from 'react-i18next';
 import BasicInput from "../component/BasicInput.tsx";
 import BasicButton from "../component/BasicButton.tsx";
 import TextButton from "../component/TextButton.tsx";
 import Divider from "../component/Divider.tsx";
 import SVGButton from "../component/SVGButton.tsx";
+import { useUnity } from '../component/UnityContext.tsx';
+
 const Login = ({navigation}: any) => {
 
-    const unityPlayerRef = useRef<UnityPlayerRefs>(null);
-
+    // const unityPlayerRef = useRef<UnityPlayerRefs>(null);
+    const { unityPlayerRef } = useUnity();
     const login = {
         header: "login_title",
         email: "login_email",
@@ -25,13 +26,14 @@ const Login = ({navigation}: any) => {
         register:"login_regist",
         other:"login_other"
     }
-    const { t } = useTranslation();
+
     const [email, setEmail] = useState('');
     const [password, setPassWord] = useState('');
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const togglePasswordVisibility = () => {
         setIsPasswordVisible(!isPasswordVisible);
     };
+    
     
 
     const handleNext = async () => {
@@ -40,6 +42,9 @@ const Login = ({navigation}: any) => {
             Alert.alert("Email or password is missing");
             return;
         }else{
+            console.log("Navigation Object:", navigation);
+            console.log("Email:", email);
+            console.log("Password:", password);
             navigation.navigate("SignUp");
         }
     
@@ -89,9 +94,6 @@ const Login = ({navigation}: any) => {
     return (
         <View style={HomeStyle.MainContainer}>
             <Unity ref={unityPlayerRef} style={HomeStyle.TopContainer}/>
-            <View>
-                
-            </View>
             <View style={HomeStyle.BottomContainer}>
 
                <View style={{padding:15}}>

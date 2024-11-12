@@ -20,36 +20,56 @@ const Unity = forwardRef(({ onReceivedMessage, style }: UnityPlayerProps, ref) =
 
     useFocusEffect(
         useCallback(() => {
-            // Mount 될 때, Unity를 Resume.
-            unityRef?.current?.resumeUnity();
-
+            if (unityRef.current) {
+                console.log("Unity is Resuming");
+                unityRef.current.resumeUnity();
+            } else {
+                console.warn("Unity Player Reference is null");
+            }
+    
             return () => {
-                // Mount 될 때, Unity를 Pause.
-                unityRef?.current?.pauseUnity(true);
+                if (unityRef.current) {
+                    console.log("Unity is Pausing");
+                    unityRef.current.pauseUnity(true);
+                }
             };
         }, [])
     );
+    
+    
 
     useImperativeHandle(ref, () => ({
         sendToUnity(data: InterfaceData) {
-            if (!unityRef.current) return;
-
+            if (!unityRef.current) {
+                console.warn("Unity Player is not ready");
+                return;
+            }
+    
             const jsonData = JSON.stringify(data);
             console.log(`[Unity SEND] ${jsonData}`);
             unityRef.current.postMessage('BridgeController', 'ReceivedMessage', jsonData);
         }
     }));
+    
 
     function onUnityMessage(data: UnityViewContentUpdateEvent) {
-        if (onReceivedMessage === undefined) return;
-
-        console.log(`[Unity RECV] ${data.nativeEvent.message}`);
-        const jsonData: InterfaceData = JSON.parse(data.nativeEvent.message);
-        onReceivedMessage(jsonData.name, jsonData.data);
+        if (!data || !data.nativeEvent.message) {
+            console.warn("Received empty Unity message");
+            return;
+        }
+    
+        try {
+            const jsonData: InterfaceData = JSON.parse(data.nativeEvent.message);
+            console.log(`[Unity RECV] Name: ${jsonData.name}, Data: ${jsonData.data}`);
+            onReceivedMessage?.(jsonData.name, jsonData.data);
+        } catch (error) {
+            console.error("Failed to parse Unity message:", error);
+        }
     }
+    
 
     return (
-        <UnityView ref={unityRef} style={style} onUnityMessage={onUnityMessage} androidKeepPlayerMounted={false} />
+        <UnityView ref={unityRef} style={style} onUnityMessage={onUnityMessage} androidKeepPlayerMounted={false} backgroundColor="transparent"/>
     );
 });
 

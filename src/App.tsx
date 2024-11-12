@@ -8,8 +8,8 @@ import {i18n} from "./i18n.config.ts";
 import Onboarding from "./screen/Onboarding.tsx";
 import Splash from "./screen/Splash.tsx";
 import Login from "./screen/Login.tsx";
-
-
+import SignUp from './screen/SignUp.tsx';
+import { UnityProvider } from "./component/UnityContext.tsx";
 function App(): React.JSX.Element {
 
     useEffect(() => {
@@ -32,14 +32,16 @@ function App(): React.JSX.Element {
     };
     
     return (
-
+    <UnityProvider>
         <SafeAreaProvider>
             <I18nextProvider i18n={i18n}>
+                
                 <NavigationContainer theme={theme}>
                     <Stack.Navigator
                         initialRouteName="Splash"
                         screenOptions={{
                             headerShown: false,
+                            
                         }}>
                         <Stack.Screen
                             name="Splash"
@@ -53,10 +55,17 @@ function App(): React.JSX.Element {
                             name="Login"
                             component={Login}
                         />
+
+                        <Stack.Screen
+                            name="SignUp"
+                            component={SignUp}
+                        />
                     </Stack.Navigator>
                 </NavigationContainer>
             </I18nextProvider>
         </SafeAreaProvider>
+    </UnityProvider>
+        
     );
 }
 
