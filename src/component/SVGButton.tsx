@@ -60,7 +60,7 @@ const SVGButton = ({
                         width={moderateScale(svgSize)}
                         height={moderateScale(svgSize)}
                         fill={textColor}
-                        style={{ marginRight: text ? 8 : 0 }}
+                        style={{ marginRight: text ? moderateScale(8)  : moderateScale(0) }}
                     />
                 )}
               

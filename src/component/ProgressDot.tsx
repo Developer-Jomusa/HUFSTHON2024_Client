@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import { moderateScale } from '../util/ScreenScaler';
 
 interface ProgressDotProps {
     active: boolean;
@@ -13,10 +14,10 @@ const ProgressDot: React.FC<ProgressDotProps> = ({ active }) => {
 
 const styles = StyleSheet.create({
     dot: {
-        width: 10,
-        height: 10,
-        borderRadius: 5,
-        marginHorizontal: 5,
+        width: moderateScale(10),
+        height: moderateScale(10),
+        borderRadius: moderateScale(5),
+        marginHorizontal: moderateScale(5),
     },
     activeDot: {
         backgroundColor: '#006FFD',

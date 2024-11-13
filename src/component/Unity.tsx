@@ -33,7 +33,7 @@ const Unity = ({ style, onUnityMessage, onSendMessage }: UnityPlayerProps) => {
                     console.log("Unity Player is unloading...");
                     ref.unloadUnity?.();
                     //방지 차원...
-                    await new Promise((resolve) => setTimeout(resolve, 200));
+                    await new Promise((resolve) => setTimeout(resolve, 500));
                     console.log("Unity Player unloaded");
                 }
 

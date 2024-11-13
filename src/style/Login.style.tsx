@@ -1,16 +1,43 @@
 import { StyleSheet } from 'react-native';
 import {moderateScale} from "../util/ScreenScaler.tsx";
-import { facebook } from '../../asset/svg/index.ts';
 
 export default StyleSheet.create({
+
+    MainContainer:{
+        width:"100%", 
+        height:"100%", 
+        flexDirection:"column"
+    },
+    TopContainer: {
+        width: "100%",
+        flex:1
+    },
+    BottomContainer: {
+        width: "100%",
+        height: moderateScale(500),
+        justifyContent : "flex-start"
+    },
+    UnityContainer:{
+        flex:1
+    },
     LoginTitle:{
+   
         justifyContent:'center',
         marginLeft:moderateScale(12),
         paddingTop:moderateScale(10),
         paddingBottom:moderateScale(10)
     //   alignItems:'center',
-        
-     
+    },
+    LoginMain:{
+   
+    },
+    main:{
+        padding: moderateScale(15),
+    
+    },
+    titleText:{
+        fontSize: moderateScale(28),
+        fontWeight:"800"
     },
     input:{
         height: moderateScale(48),

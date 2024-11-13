@@ -4,10 +4,10 @@
 const  { width, height } = Dimensions.get('window');
 
 //기준이 되는 가로
-const guidelineBaseWidth = 360;
+const guidelineBaseWidth = 375;
 
 //기준이 되는 세로
-const guidelineBaseHeight = 780;
+const guidelineBaseHeight = 872;
 
 // 뷰포트기반
 const scale = (size : number) => width / guidelineBaseWidth * size;

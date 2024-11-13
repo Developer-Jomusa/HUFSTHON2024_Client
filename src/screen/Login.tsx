@@ -1,7 +1,6 @@
 ﻿import {View,Alert} from "react-native";
 import React, {useState, useRef, useEffect, useCallback} from "react";
 import Unity, {UnityPlayerRefs} from "../component/Unity.tsx";
-import HomeStyle from "../style/Home.style.tsx";
 import LoginStyle from "../style/Login.style.tsx";
 import BasicText from "../component/BasicText.tsx";
 import BasicInput from "../component/BasicInput.tsx";
@@ -57,18 +56,20 @@ const Login = ({navigation}: any) => {
 
     
     return (
-        <View style={HomeStyle.MainContainer}>
-            <Unity style={HomeStyle.TopContainer}/>
-            <View style={HomeStyle.BottomContainer}>
+        <View style={LoginStyle.MainContainer}>
+            <View style={LoginStyle.TopContainer}>
+                <Unity style={LoginStyle.UnityContainer}/>
+            </View>
+            <View style={LoginStyle.BottomContainer}>
 
-               <View style={{padding:15}}>
+               <View style={LoginStyle.main}>
                     {/* 타이틀 부분 */}
                      <View style={LoginStyle.LoginTitle}> 
-                        <BasicText stringKey={login.header} style={{fontSize: 30,fontWeight:"800"}}/>
+                        <BasicText stringKey={login.header} style={LoginStyle.titleText}/>
                     </View>
 
                     {/* 이메일, 비번, 로그인 부분 */}
-                    <View>
+                    <View style={LoginStyle.LoginMain}>
 
                         {/* 이메일, 비밀번호 작성 */}
                         <View >

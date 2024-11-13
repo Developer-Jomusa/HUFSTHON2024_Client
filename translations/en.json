@@ -7,7 +7,10 @@
   "login_button":"Login",
   "login_isUser": "Not a member?",
   "login_regist": "Sign Up",
-  "login_other": "Or start with a social account"
+  "login_other": "Or start with a social account",
+  "signup_greeting": "What's your name?",
+  "signup_typing": "Please enter your nickname.",
+  "signup_confirm": "This is my name, remember it!"
 
 
 

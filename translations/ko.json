@@ -16,5 +16,8 @@
   "login_button":"로그인",
   "login_isUser":"회원이 아니신가요?",
   "login_regist":"가입하기",
-  "login_other": "혹은 소셜 계정으로 시작하기"
+  "login_other": "혹은 소셜 계정으로 시작하기",
+  "signup_greeting":"이름이 뭐예요?",
+  "signup_typing":"닉네임을 입력해 주세요.",
+  "signup_confirm":"내 이름이야, 기억해줘!"
 }
