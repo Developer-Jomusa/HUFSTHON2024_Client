@@ -9,6 +9,7 @@ import Onboarding from "./screen/Onboarding.tsx";
 import Splash from "./screen/Splash.tsx";
 import Login from "./screen/Login.tsx";
 import SignUp from './screen/SignUp.tsx';
+import Home from "./screen/Home.tsx";
 function App(): React.JSX.Element {
     
     useEffect(() => {
@@ -56,6 +57,11 @@ function App(): React.JSX.Element {
                         <Stack.Screen
                             name="SignUp"
                             component={SignUp}
+                        />
+
+                        <Stack.Screen
+                            name="Home"
+                            component={Home}
                         />
                     </Stack.Navigator>
                 </NavigationContainer>

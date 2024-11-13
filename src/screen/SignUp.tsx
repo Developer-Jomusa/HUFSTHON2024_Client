@@ -50,7 +50,7 @@ const SignUp = ({navigation}: any) => {
 
     };
     const handleNextPage=()=>{
-        navigation.navigate("SignUp");
+        navigation.navigate("Home");
     };
     const handleOptionSelect = (option: string) => {
         setSelectedOptions((prev) =>
