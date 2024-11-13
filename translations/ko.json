@@ -19,5 +19,12 @@
   "login_other": "혹은 소셜 계정으로 시작하기",
   "signup_greeting":"이름이 뭐예요?",
   "signup_typing":"닉네임을 입력해 주세요.",
-  "signup_confirm":"내 이름이야, 기억해줘!"
+  "signup_confirm":"내 이름이야, 기억해줘!",
+  "signup_problem":"무슨 문제가 있으세요?",
+  "signup_select1":"분리불안",
+  "signup_select2":"우울증",
+  "signup_select3":"강박증",
+  "signup_select4":"조현병",
+  "signup_select5":"ADHD",
+  "signup_selectconfirm":"선택 완료!"
 }

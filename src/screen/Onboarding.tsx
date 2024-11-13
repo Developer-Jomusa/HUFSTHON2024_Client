@@ -69,7 +69,7 @@ const Onboarding = ({ navigation }: any) => {
                     onPress={handleNext}
                     disabled={false}
                     enabledColor='#006FFD/#FFFFFF/#D3D3D3'
-                    disabledColor={''}
+
                 />
             </View>
         </View>

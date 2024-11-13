@@ -16,7 +16,10 @@ export interface BasicButtonProps {
     disabled?: boolean;
     enabledColor?: string;
     disabledColor?: string;
+    children?: React.ReactNode;
+    justifyContent?: "space-between" | "center" | "flex-start" | "flex-end" | "space-around" | "space-evenly"; // 수정된 부분
 }
+
 
 const BasicButton = ({
                          style,
@@ -27,6 +30,8 @@ const BasicButton = ({
                          disabled,
                          enabledColor = '#FFFFFF/#000000/#000000',
                          disabledColor = '#D3D3D3/#000000/#D3D3D3',
+                         children,
+                         justifyContent = 'center'
                      }: BasicButtonProps) => {
     const parseColor = (color: string) => {
         const colors = color?.split('/') || ['#ffffff', '#000000', 'transparent'];
@@ -45,21 +50,33 @@ const BasicButton = ({
         <TouchableOpacity
             onPress={!disabled ? onPress : undefined}
             style={[
-                styles.basicRound,
-                style,
                 {
-                    backgroundColor: backgroundColor || '#ffffff',
+                  
+                    backgroundColor: backgroundColor || "#ffffff",
                     borderColor: borderColor,
                     borderWidth: borderColor ? moderateScale(1.5) : 0,
+                    borderRadius: Number.MAX_SAFE_INTEGER,
+                    justifyContent: 'center',
+                    
                 },
+                style,
+                
             ]}
             disabled={disabled}
         >
-            <View style={styles.rowAndCentered}>
+            <View 
+             style={[
+                {
+                    justifyContent: justifyContent, // 전달받은 justifyContent 적용
+                },
+                styles.rowAndCentered, // 추가 스타일 적용
+            ]}
+            >
                 <BasicText
                     style={{fontWeight: textWeight, color: textColor, fontSize: moderateScale(textSize)} as TextStyle}
                     stringKey={text}
                 />
+                 {children}
             </View>
         </TouchableOpacity>
     );

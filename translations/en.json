@@ -10,7 +10,16 @@
   "login_other": "Or start with a social account",
   "signup_greeting": "What's your name?",
   "signup_typing": "Please enter your nickname.",
-  "signup_confirm": "This is my name, remember it!"
+  "signup_confirm": "This is my name, remember it!",
+  "signup_problem": "What issue are you experiencing?",
+  "signup_select1": "Separation Anxiety",
+  "signup_select2": "Depression",
+  "signup_select3": "Obsessive-Compulsive Disorder (OCD)",
+  "signup_select4": "Schizophrenia",
+  "signup_select5": "ADHD",
+  "signup_selectconfirm": "Selection Complete!"
+
+
 
 
 

@@ -118,7 +118,7 @@ const Login = ({navigation}: any) => {
                                 onPress={handleNext}
                                 disabled={!isCanNext}
                                 enabledColor='#006FFD/#FFFFFF/'
-                                disabledColor={'#3399FF/#FFFFFF/'}
+                                
                             />
 
                         </View>
