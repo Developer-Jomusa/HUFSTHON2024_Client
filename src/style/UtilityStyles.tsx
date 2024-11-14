@@ -5,6 +5,9 @@ export default StyleSheet.create({
     fs_tiny: {
         fontSize: moderateScale(12)
     },
+    fs_little: {
+        fontSize: moderateScale(16)
+    },
     fs_small: {
         fontSize: moderateScale(18)
     },

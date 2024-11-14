@@ -26,5 +26,15 @@
   "signup_select3":"강박증",
   "signup_select4":"조현병",
   "signup_select5":"ADHD",
-  "signup_selectconfirm":"선택 완료!"
+  "signup_selectconfirm":"선택 완료!",
+  
+  "menu_explore": "탐색",
+  "menu_chat": "AI대화",
+  "menu_profile": "내 프로필",
+  
+  "profile_title": "내 프로필",
+  "profile_nickname": "더드밍",
+  "profile_edit": "내 정보 수정",
+  "profile_destroy": "데이터 지우기",
+  "profile_bub": "이용약관 및 개인정보처리방침"
 }
