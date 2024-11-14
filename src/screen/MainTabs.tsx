@@ -5,13 +5,14 @@ import Chat from "../screen/Chat";
 import Profile from "../screen/Profile";
 import SVG from "../component/SVG.tsx";
 import {moderateScale} from "../util/ScreenScaler.tsx";
-import {View} from "react-native";
-import UtilityStyles from "../style/UtilityStyles.tsx";
-import stylesheet from "../style/stylesheet.tsx";
+import {useTranslation} from "react-i18next";
 
 const Tab = createBottomTabNavigator();
 
 const MainTabs = () => {
+
+    const {t} = useTranslation();
+
     return (
         <Tab.Navigator
             initialRouteName={"Chat"}
@@ -29,31 +30,31 @@ const MainTabs = () => {
                             return null;
                     }
                 },
-                tabBarLabel: route.name,
+                tabBarLabel: t(`menu_${route.name.toLowerCase()}`),
                 headerShown: false,
-                tabBarIconStyle:{
-                    width : moderateScale(20),
-                    height : moderateScale(20),
+                tabBarIconStyle: {
+                    width: moderateScale(20),
+                    height: moderateScale(20),
                 },
                 tabBarStyle: {
-                    height : moderateScale(80),
-                    display:"flex",
+                    height: moderateScale(80),
+                    display: "flex",
                     borderTopWidth: 0,
                     elevation: 0,
                 },
                 tabBarItemStyle: {
-                    justifyContent:"center",
-                    alignItems:"center",
+                    justifyContent: "center",
+                    alignItems: "center",
                     flexDirection: "row",
                 },
-                tabBarLabelStyle:{
-                    fontSize:moderateScale(10)
+                tabBarLabelStyle: {
+                    fontSize: moderateScale(10)
                 },
             })}
         >
-                <Tab.Screen name="Explore" component={Explore}/>
-                <Tab.Screen name="Chat" component={Chat}/>
-                <Tab.Screen name="Profile" component={Profile}/>
+            <Tab.Screen name="Explore" component={Explore}/>
+            <Tab.Screen name="Chat" component={Chat}/>
+            <Tab.Screen name="Profile" component={Profile}/>
         </Tab.Navigator>
     );
 };

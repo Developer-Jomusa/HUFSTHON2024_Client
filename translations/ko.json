@@ -44,7 +44,13 @@
   "chat_startBtn":"시작하기",
   "chat_noEndChat":"완료한 대화가 없습니다",
   "chat_startChatNow":"지금 대화를 시작해보세요!",
-  "chat_startNow":"대화 시작하러 가기"
-
-
+  "chat_startNow":"대화 시작하러 가기",
+  "menu_explore": "탐색",
+  "menu_chat": "AI대화",
+  "menu_profile": "내 프로필",
+  "profile_title": "내 프로필",
+  "profile_nickname": "더드밍",
+  "profile_edit": "내 정보 수정",
+  "profile_destroy": "데이터 지우기",
+  "profile_bub": "이용약관 및 개인정보처리방침"
 }

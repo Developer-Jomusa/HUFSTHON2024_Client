@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 
 const stylesheet = StyleSheet.create({
     emptyView1: {
-        height: moderateScale(0)
+        height: moderateScale(55)
     },
     emptyView2: {
         height: moderateScale(0)
