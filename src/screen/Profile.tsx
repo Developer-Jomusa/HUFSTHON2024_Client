@@ -1,13 +1,12 @@
 ﻿import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import ProfileStyle from "../style/Profile.style.tsx";
+import {View} from 'react-native';
 import BasicText from "../component/BasicText.tsx";
 import UtilityStyles from "../style/UtilityStyles.tsx";
 import {SafeAreaView} from "react-native-safe-area-context";
 import SVG from "../component/SVG.tsx";
 import {moderateScale} from "../util/ScreenScaler.tsx";
 import stylesheet from "../style/stylesheet.tsx";
-import {next} from "../../asset/svg";
+import ProfileStyle from "../style/Profile.style.tsx";
 import ProfileMenu from "../component/ProfileMenu.tsx";
 
 const Profile = () => {

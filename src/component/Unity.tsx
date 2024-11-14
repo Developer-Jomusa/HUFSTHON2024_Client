@@ -26,7 +26,7 @@ const Unity = ({ style, onUnityMessage, onSendMessage }: UnityPlayerProps) => {
 
     // 렌더링 지연 (800ms)
     useEffect(() => {
-        const timer = setTimeout(() => setIsReady(true), 1000);
+        const timer = setTimeout(() => setIsReady(true), 500);
         return () => clearTimeout(timer);
     }, []);
 
