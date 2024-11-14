@@ -3,12 +3,22 @@ import {moderateScale} from "../util/ScreenScaler.tsx";
 
 export default StyleSheet.create({
     MainContainer:{
-        width:"100%",
-        height:"100%",
+        flex :1,
+        position:"relative",
     }, 
     UnityContainer: {
-        flex:1
-    }
+        ...StyleSheet.absoluteFillObject,
+    },
+    ContentContainer: {
+        flex: 1, 
+    },
+    TitleContainer: {
+        height: moderateScale(56),
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding:moderateScale(18)
+    },
 
 });
 

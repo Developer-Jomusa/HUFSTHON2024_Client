@@ -1,4 +1,4 @@
-﻿import React, { useCallback, useEffect, useState } from 'react';
+﻿import React, { useCallback, useEffect, useRef, useState } from 'react';
 // @ts-ignore
 import UnityView, { UnityViewContentUpdateEvent, ComponentRef } from '@azesmway/react-native-unity';
 import { StyleProp, ViewStyle, View, ActivityIndicator } from 'react-native';
@@ -9,10 +9,6 @@ export interface InterfaceData {
     data: string;
 }
 
-export interface UnityPlayerRefs {
-    componentRef: ComponentRef | null;
-}
-
 interface UnityPlayerProps {
     style?: StyleProp<ViewStyle>;
     onUnityMessage?: (data: InterfaceData) => void; // Unity에서 메시지 수신 시 호출
@@ -20,38 +16,39 @@ interface UnityPlayerProps {
 }
 
 const Unity = ({ style, onUnityMessage, onSendMessage }: UnityPlayerProps) => {
-    const ref = useUnityStore((state) => state.unityPlayerRef?.componentRef);
-    const setUnityPlayerRef = useUnityStore((state) => state.setUnityPlayerRef);
+    const unityRef = useRef<ComponentRef>(null); // UnityView의 ref를 관리
     const [isReady, setIsReady] = useState(false);
 
-    // 렌더링 지연 (800ms)
+    const setUnityPlayerRef = useUnityStore((state) => state.setUnityPlayerRef);
+
+    useEffect(() => {
+        setUnityPlayerRef({ componentRef: unityRef.current }); // useUnityStore에 ref 설정
+    }, [setUnityPlayerRef]);
+
     useEffect(() => {
         const timer = setTimeout(() => setIsReady(true), 500);
         return () => clearTimeout(timer);
     }, []);
 
-    // Unity로 메시지를 보낼 메서드
     const sendToUnity = useCallback(
         (data: InterfaceData) => {
-            if (!ref) {
+            if (!unityRef.current) {
                 console.warn("Unity Player is not ready");
                 return;
             }
             const jsonData = JSON.stringify(data);
             console.log(`[Unity SEND] ${jsonData}`);
-            ref.postMessage?.('BridgeController', 'ReceivedMessage', jsonData);
+            unityRef.current.postMessage?.('BridgeController', 'ReceivedMessage', jsonData);
         },
-        [ref]
+        []
     );
 
-    // 외부로 메시지 보내기 메서드 전달
     useEffect(() => {
         if (onSendMessage) {
             onSendMessage(sendToUnity);
         }
     }, [onSendMessage, sendToUnity]);
 
-    // Unity에서 메시지를 수신할 때 호출
     const handleUnityMessage = useCallback(
         (data: UnityViewContentUpdateEvent) => {
             const message = data?.nativeEvent?.message;
@@ -70,7 +67,6 @@ const Unity = ({ style, onUnityMessage, onSendMessage }: UnityPlayerProps) => {
         [onUnityMessage]
     );
 
-    // 로딩 화면 표시
     if (!isReady) {
         return (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -79,10 +75,9 @@ const Unity = ({ style, onUnityMessage, onSendMessage }: UnityPlayerProps) => {
         );
     }
 
-    // UnityView 렌더링
     return (
         <UnityView
-            ref={ref}
+            ref={unityRef} // UnityView의 ref 연결
             style={style}
             onUnityMessage={handleUnityMessage}
             backgroundColor="transparent"

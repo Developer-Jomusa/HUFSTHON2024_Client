@@ -55,5 +55,8 @@ export default StyleSheet.create({
     },
     fw_900: {
         fontWeight: "900"
+    },
+    flipX:{
+        transform: [{ scaleX: -1 }]
     }
 });
