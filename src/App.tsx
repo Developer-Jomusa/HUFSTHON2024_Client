@@ -10,7 +10,7 @@ import Splash from "./screen/Splash.tsx";
 import Login from "./screen/Login.tsx";
 import SignUp from './screen/SignUp.tsx';
 import MainTabs from "./screen/MainTabs.tsx";
-
+import Chatting from './screen/Chatting.tsx';
 function App(): React.JSX.Element {
     useEffect(() => {
         if (Platform.OS === 'android') {
@@ -46,6 +46,7 @@ function App(): React.JSX.Element {
                         <Stack.Screen name="Login" component={Login} />
                         <Stack.Screen name="SignUp" component={SignUp} />
                         <Stack.Screen name="MainTabs" component={MainTabs} />
+                        <Stack.Screen name="Chatting" component={Chatting} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </I18nextProvider>

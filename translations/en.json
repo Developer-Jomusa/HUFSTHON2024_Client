@@ -17,7 +17,25 @@
   "signup_select3": "Obsessive-Compulsive Disorder (OCD)",
   "signup_select4": "Schizophrenia",
   "signup_select5": "ADHD",
-  "signup_selectconfirm": "Selection Complete!"
+  "signup_selectconfirm": "Selection Complete!",
+  "chat_header": "AI Conversation",
+  "chat_start": "Start Conversation",
+  "chat_ing": "Ongoing Conversation",
+  "chat_end": "Completed Conversation",
+  "chat_person1": "Eunseong Lee",
+  "chat_person2": "Youngeui Lee",
+  "chat_person3": "Seongjin Kim",
+  "chat_person4": "Youngho Choi",
+  "chat_person5": "Heeyeon Choi",
+  "chat_chat1": "Leave separation anxiety and depression to me!",
+  "chat_chat2": "God bless our country, hurrah!",
+  "chat_chat3": "Mugunghwa blooms throughout the land",
+  "chat_chat4": "Let’s preserve Korea forever!",
+  "chat_chat5": "Until the East Sea and Baekdu Mountain dry up and wear away!",
+  "chat_startBtn": "Start",
+  "chat_noEndChat": "No completed conversations",
+  "chat_startChatNow": "Start a conversation now!",
+  "chat_startNow": "Go to start a conversation"
 
 
 

@@ -26,5 +26,25 @@
   "signup_select3":"강박증",
   "signup_select4":"조현병",
   "signup_select5":"ADHD",
-  "signup_selectconfirm":"선택 완료!"
+  "signup_selectconfirm":"선택 완료!",
+  "chat_header":"AI대화",
+  "chat_start":"대화 시작하기",
+  "chat_ing":"진행중인 대화",
+  "chat_end":"완료한 대화 ",
+  "chat_person1":"이은성",
+  "chat_person2":"이융의",
+  "chat_person3":"김성진",
+  "chat_person4":"최영호",
+  "chat_person5":"최희연",
+  "chat_chat1":"분리불안, 우울증은 저에게 맡기세요!",
+  "chat_chat2":"하느님이 보우하사 우리나라 만세",
+  "chat_chat3":"무궁화 삼천리 화려강산",
+  "chat_chat4":"대한사람 대한으로 길이 보전하세!",
+  "chat_chat5":"동해물과 백두산이 마르고 닳도록!",
+  "chat_startBtn":"시작하기",
+  "chat_noEndChat":"완료한 대화가 없습니다",
+  "chat_startChatNow":"지금 대화를 시작해보세요!",
+  "chat_startNow":"대화 시작하러 가기"
+
+
 }
