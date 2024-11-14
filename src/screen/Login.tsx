@@ -12,6 +12,7 @@ import {useUnityStore} from "../store/UnityStore.ts";
 import {useFocusEffect} from "@react-navigation/native";
 // @ts-ignore
 import ComponentRef from '@azesmway/react-native-unity';
+import UtilityStyles from "../style/UtilityStyles.tsx";
 
 const Login = ({navigation}: any) => {
     
@@ -35,7 +36,7 @@ const Login = ({navigation}: any) => {
     };
 
     const handleNext = async () => {
-        navigation.navigate("SignUp");
+        navigation.replace("SignUp");
     };
     
     const handleForgetPW =()=>{
@@ -51,9 +52,6 @@ const Login = ({navigation}: any) => {
         setPassWord(text);
         setCanNext(email.length>0 && password.length>0);
     };
-
-    const unityPlayerRef = useUnityStore((state) => state.unityPlayerRef);
-
     
     return (
         <View style={LoginStyle.MainContainer}>
@@ -65,7 +63,7 @@ const Login = ({navigation}: any) => {
                <View style={LoginStyle.main}>
                     {/* 타이틀 부분 */}
                      <View style={LoginStyle.LoginTitle}> 
-                        <BasicText stringKey={login.header} style={LoginStyle.titleText}/>
+                        <BasicText stringKey={login.header} style={[LoginStyle.titleText,UtilityStyles.fc_black]}/>
                     </View>
 
                     {/* 이메일, 비번, 로그인 부분 */}
@@ -75,19 +73,21 @@ const Login = ({navigation}: any) => {
                         <View >
                             <BasicInput
                                 placeholderKey={login.email}
-                                style={LoginStyle.input}
+                                style={[LoginStyle.input,UtilityStyles.fc_black]}
                                 onChangeText={onChangeEmail}
                                 value={email}
                                 keyboardType="email-address"
+                                placeholderTextColor={'gray'}
                             />
                            <View style={LoginStyle.inputContainer}>
                                 <BasicInput
                                     placeholderKey={login.password}
-                                    style={LoginStyle.passwordInput}
+                                    style={[LoginStyle.passwordInput,UtilityStyles.fc_black]}
                                     onChangeText={onChangePassWd}
                                     value={password}
-                                    secureTextEntry={true} // 비밀번호 숨김
+                                    secureTextEntry={true}
                                     keyboardType="default"
+                                    placeholderTextColor={'gray'}
                                 />
                                 <SVGButton
                                      style={LoginStyle.canSee}

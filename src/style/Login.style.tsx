@@ -37,7 +37,7 @@ export default StyleSheet.create({
     },
     titleText:{
         fontSize: moderateScale(28),
-        fontWeight:"800"
+        fontWeight:"800",
     },
     input:{
         height: moderateScale(48),
@@ -48,7 +48,7 @@ export default StyleSheet.create({
         marginBottom:moderateScale(10),
         borderWidth: moderateScale(1),
         padding: moderateScale(10),
-        borderRadius: moderateScale(10)
+        borderRadius: moderateScale(10),
     },
     forgetParent:{
         flexDirection:'row',

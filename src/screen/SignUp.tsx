@@ -9,6 +9,7 @@ import BasicText from "../component/BasicText.tsx";
 import BasicInput from "../component/BasicInput.tsx";
 import BasicButton from "../component/BasicButton.tsx";
 import TextButton from "../component/TextButton.tsx";
+import UtilityStyles from "../style/UtilityStyles.tsx";
 const SignUp = ({navigation}: any) => {
     const [nickname, setNickName] = useState('');
     const [isCanNext, setCanNext] = useState(false);
@@ -71,7 +72,7 @@ const SignUp = ({navigation}: any) => {
                         
                     <BasicText 
                         stringKey={signUp.problem} 
-                        style={SignUpStyle.problem}/>
+                        style={[SignUpStyle.problem,UtilityStyles.fc_black]}/>
 
                     <View>
                        {/* 옵션 버튼 */}
@@ -137,13 +138,14 @@ const SignUp = ({navigation}: any) => {
                     <View style={SignUpStyle.bubble}>
                     <BasicText 
                         stringKey={signUp.greeting} 
-                        style={SignUpStyle.greeting}/>
+                        style={[SignUpStyle.greeting,UtilityStyles.fc_black]}/>
                     <BasicInput
                         placeholderKey={signUp.typingNickName}
-                        style={SignUpStyle.input}
+                        style={[SignUpStyle.input,UtilityStyles.fc_black]}
                         onChangeText={onChangeNickname}
                         value={nickname}
                         keyboardType="default"
+                        placeholderTextColor={'gray'}
                     />
                     <BasicButton
                         style={SignUpStyle.submit}
