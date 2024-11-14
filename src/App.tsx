@@ -1,5 +1,5 @@
 import {Platform, StatusBar} from "react-native";
-import React, {useEffect, useRef,} from "react";
+import React, {useEffect} from "react";
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import {SafeAreaProvider} from "react-native-safe-area-context";
 import {I18nextProvider} from "react-i18next";
@@ -9,15 +9,15 @@ import Onboarding from "./screen/Onboarding.tsx";
 import Splash from "./screen/Splash.tsx";
 import Login from "./screen/Login.tsx";
 import SignUp from './screen/SignUp.tsx';
-import Home from "./screen/Home.tsx";
+import MainTabs from "./screen/MainTabs.tsx";
+
 function App(): React.JSX.Element {
-    
     useEffect(() => {
-        if (Platform.OS == 'android') {
+        if (Platform.OS === 'android') {
             StatusBar.setBackgroundColor('transparent');
             StatusBar.setTranslucent(true);
         }
-        StatusBar.setBarStyle('dark-content')
+        StatusBar.setBarStyle('dark-content');
         StatusBar.setHidden(false);
     }, []);
 
@@ -27,42 +27,25 @@ function App(): React.JSX.Element {
         ...DefaultTheme,
         colors: {
             ...DefaultTheme.colors,
-            background: 'white'
-        }
+            background: 'white',
+        },
     };
-    
+
     return (
         <SafeAreaProvider>
             <I18nextProvider i18n={i18n}>
-                
                 <NavigationContainer theme={theme}>
                     <Stack.Navigator
                         initialRouteName="Splash"
                         screenOptions={{
                             headerShown: false,
-                        }}>
-                        <Stack.Screen
-                            name="Splash"
-                            component={Splash}
-                        />
-                        <Stack.Screen
-                            name="Onboarding"
-                            component={Onboarding}
-                        />
-                        <Stack.Screen
-                            name="Login"
-                            component={Login}
-                        />
-
-                        <Stack.Screen
-                            name="SignUp"
-                            component={SignUp}
-                        />
-
-                        <Stack.Screen
-                            name="Home"
-                            component={Home}
-                        />
+                        }}
+                    >
+                        <Stack.Screen name="Splash" component={Splash} />
+                        <Stack.Screen name="Onboarding" component={Onboarding} />
+                        <Stack.Screen name="Login" component={Login} />
+                        <Stack.Screen name="SignUp" component={SignUp} />
+                        <Stack.Screen name="MainTabs" component={MainTabs} />
                     </Stack.Navigator>
                 </NavigationContainer>
             </I18nextProvider>

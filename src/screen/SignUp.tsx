@@ -51,7 +51,7 @@ const SignUp = ({navigation}: any) => {
 
     };
     const handleNextPage=()=>{
-        navigation.navigate("Home");
+        navigation.replace("MainTabs");
     };
     const handleOptionSelect = (option: string) => {
         setSelectedOptions((prev) =>
