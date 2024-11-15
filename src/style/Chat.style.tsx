@@ -24,16 +24,19 @@ export default StyleSheet.create({
         height:moderateScale(39),
         borderRadius:moderateScale(16),
         width:moderateScale(343),
-        justifyContent:'space-between',
+        justifyContent:'space-evenly',
         alignItems:'center',
         flexDirection:'row',
-        paddingHorizontal:moderateScale(20.83)
-
+        // paddingHorizontal:moderateScale(20.83)
+    },
+    btn:{
+        
+        paddingHorizontal:moderateScale(20.83),
+        paddingVertical: moderateScale(8),
+        borderRadius:moderateScale(12)
     },
     button: {
-
         backgroundColor: "transparent",
-
     },
     selectedButton: {
         backgroundColor: '#FFFFFF', // 선택된 버튼의 배경색
@@ -65,6 +68,44 @@ export default StyleSheet.create({
     divide:{
         color:'#71727A',
         fontWeight:'400'
-    }
+    },
+    startChatMain:{
+        width:"100%", 
+        flex:1,
+        alignItems:'center',
+        marginTop:moderateScale(17),
+
+    },
+    chatRoom: {
+        flexDirection:'row',
+        width: moderateScale(359),
+        marginBottom: moderateScale(13),
+        padding: moderateScale(12),
+        backgroundColor: '#FFFFFF',
+        borderRadius: moderateScale(183),
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        borderColor:"#000000",
+        borderWidth:moderateScale(1)
+    },
+    chatText:{
+        width: moderateScale(179)
+    },
+    chatPerson: {
+        fontSize: moderateScale(12),
+        fontWeight: '700',
+        marginBottom: moderateScale(4),
+    },
+    chatMessage: {
+        fontSize: moderateScale(12),
+        color: '#71727A',
+        marginBottom: moderateScale(8),
+    },
+    enterChatButton: {
+        paddingHorizontal: moderateScale(10),
+        paddingVertical: moderateScale(6),
+        borderRadius: moderateScale(7),
+    },
+    
 });
 
