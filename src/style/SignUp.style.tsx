@@ -15,27 +15,21 @@ export default StyleSheet.create({
     speech:{
         position: "absolute",
         top: "10%",
-        left: "5%",
-        // transform: [{ translateX: moderateScale(-50) }, { translateY:moderateScale(-50)  }],
+        left: "5%", 
         zIndex: moderateScale(10),
     },
     container: {
         alignItems: "center",
-       
     },
     bubble: {
         alignItems: "center",
-        backgroundColor: "rgba(255, 255, 255, 0.8)", // 투명도 80%
+        justifyContent: "space-between",
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
         paddingHorizontal: moderateScale(24),
-        paddingVertical:    moderateScale(14),           // 텍스트 여백
-        borderRadius: moderateScale(22),          // 둥근 모서리
-        width: moderateScale(274),             // 최대 너비
+        paddingVertical:    moderateScale(14),
+        borderRadius: moderateScale(22),
+        width: moderateScale(274),
         height:moderateScale(136),
-        // shadowColor: "#000",       // 그림자 효과
-        // shadowOffset: { width: moderateScale(0), height: moderateScale(2) },
-        // shadowOpacity:moderateScale(0.3),
-        // shadowRadius: moderateScale(3),
-        // elevation: moderateScale(5),              // Android 그림자 효과
       },
       triangle: {
         width: moderateScale(0),
@@ -65,17 +59,21 @@ export default StyleSheet.create({
         borderRadius: moderateScale(12),
         width:'100%',
     },
+    submitView:{
+        width: "100%", 
+        height: moderateScale(27)
+    },
     submit:{
-        height:moderateScale(27),
         width:'100%',
-        margin:moderateScale(10)
+        height:'100%',
+        borderWidth:1,
+        borderColor:"black"
     },
 
     speechForNext:{
         position: "absolute",
         top: "10%",
         left: "5%",
-        // transform: [{ translateX: moderateScale(-50) }, { translateY:moderateScale(-50)  }],
         zIndex: moderateScale(10),
     },
     bubbleForNext:{

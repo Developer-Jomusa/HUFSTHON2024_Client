@@ -1,6 +1,5 @@
 ﻿import {View,Alert} from "react-native";
-import React, {useState, useRef, useEffect, useCallback} from "react";
-import Unity, {UnityPlayerRefs} from "../component/Unity.tsx";
+import React, {useState} from "react";
 import LoginStyle from "../style/Login.style.tsx";
 import BasicText from "../component/BasicText.tsx";
 import BasicInput from "../component/BasicInput.tsx";
@@ -8,11 +7,9 @@ import BasicButton from "../component/BasicButton.tsx";
 import TextButton from "../component/TextButton.tsx";
 import Divider from "../component/Divider.tsx";
 import SVGButton from "../component/SVGButton.tsx";
-import {useUnityStore} from "../store/UnityStore.ts";
-import {useFocusEffect} from "@react-navigation/native";
-// @ts-ignore
-import ComponentRef from '@azesmway/react-native-unity';
 import UtilityStyles from "../style/UtilityStyles.tsx";
+import OnboardingStyle from "../style/Onboarding.style.tsx";
+import Unity from "../component/Unity.tsx";
 
 const Login = ({navigation}: any) => {
     
@@ -111,14 +108,13 @@ const Login = ({navigation}: any) => {
                         {/* 로그인버튼 */}
                         <View >
                             <BasicButton
-                                style={LoginStyle.submit}
-                                text={login.submit}
-                                textSize={12}
-                                textWeight={'700'}
+                                buttonStyle={LoginStyle.submit}
+                                textStyle={[UtilityStyles.fs_little,UtilityStyles.fw_500]}
+                                stringKey={login.submit}
                                 onPress={handleNext}
                                 disabled={!isCanNext}
-                                enabledColor='#006FFD/#FFFFFF/'
-                                
+                                enabledColor='#006FFD/#FFFFFF/#D3D3D3'
+                                disabledColor="#99CCFD/#FFFFFF/#D3D3D3"
                             />
 
                         </View>

@@ -1,85 +1,66 @@
-﻿import {StyleProp, TouchableOpacity, View, ViewStyle} from "react-native";
-
-
-;
-import {moderateScale} from "../util/ScreenScaler.tsx";
-import styles from "../style/stylesheet.tsx";
-import {TextStyle} from "react-native/Libraries/StyleSheet/StyleSheetTypes";
-import BasicText from "./BasicText.tsx";
+﻿import React from "react";
+import { StyleProp, TouchableOpacity, View, ViewStyle, StyleSheet, TextStyle } from "react-native";
+import { moderateScale } from "../util/ScreenScaler";
+import BasicText from "./BasicText";
+import stylesheet from "../style/stylesheet.tsx";
 
 export interface BasicButtonProps {
-    style?: StyleProp<ViewStyle>;
-    text?: string;
-    textSize: number;
-    textWeight?: string;
+    buttonStyle?: StyleProp<ViewStyle>;
+    textStyle?: StyleProp<TextStyle>;
+    stringKey?: string;
     onPress?: () => void;
     disabled?: boolean;
     enabledColor?: string;
     disabledColor?: string;
-    children?: React.ReactNode;
-    justifyContent?: "space-between" | "center" | "flex-start" | "flex-end" | "space-around" | "space-evenly"; // 수정된 부분
 }
 
-
 const BasicButton = ({
-                         style,
-                         text,
-                         textSize,
-                         textWeight,
+                         buttonStyle,
+                         textStyle,
+                         stringKey,
                          onPress,
                          disabled,
-                         enabledColor = '#FFFFFF/#000000/#000000',
-                         disabledColor = '#D3D3D3/#000000/#D3D3D3',
-                         children,
-                         justifyContent = 'center'
+                         enabledColor = "#FFFFFF/#000000/#000000",
+                         disabledColor = "#D3D3D3/#000000/#D3D3D3",
                      }: BasicButtonProps) => {
     const parseColor = (color: string) => {
-        const colors = color?.split('/') || ['#ffffff', '#000000', 'transparent'];
+        const [backgroundColor, textColor, borderColor] = color?.split("/") || [];
         return {
-            backgroundColor: colors[0] || '#ffffff',
-            textColor: colors[1] || '#000000',
-            borderColor: colors[2] || 'transparent',
+            backgroundColor: backgroundColor || "#ffffff",
+            textColor: textColor || "#000000",
+            borderColor: borderColor || "transparent",
         };
     };
 
-    const {backgroundColor, textColor, borderColor} = disabled
+    const { backgroundColor, textColor, borderColor } = disabled
         ? parseColor(disabledColor)
         : parseColor(enabledColor);
 
     return (
         <TouchableOpacity
             onPress={!disabled ? onPress : undefined}
-            style={[
-                {
-                  
-                    backgroundColor: backgroundColor || "#ffffff",
-                    borderColor: borderColor,
-                    borderWidth: borderColor ? moderateScale(1.5) : 0,
-                    borderRadius: Number.MAX_SAFE_INTEGER,
-                    justifyContent: 'center',
-                    
-                },
-                style,
-                
-            ]}
             disabled={disabled}
         >
-            <View 
-             style={[
-                {
-                    justifyContent: justifyContent, // 전달받은 justifyContent 적용
-                },
-                styles.rowAndCentered, // 추가 스타일 적용
-            ]}
-            >
+            <View style={[stylesheet.rowAndCentered,{backgroundColor : backgroundColor,borderColor:borderColor},styles.buttonContainer,buttonStyle]}>
                 <BasicText
-                    style={{fontWeight: textWeight, color: textColor, fontSize: moderateScale(textSize)} as TextStyle}
-                    stringKey={text}
+                    style={[
+                        {
+                            color: textColor,
+                        },
+                        textStyle
+                    ]}
+                    stringKey={stringKey}
                 />
-                 {children}
             </View>
         </TouchableOpacity>
     );
 };
+
+const styles = StyleSheet.create({
+    buttonContainer: {
+        borderRadius: Number.MAX_SAFE_INTEGER,
+        borderWidth : moderateScale(1)
+    },
+});
 
 export default BasicButton;

@@ -33,7 +33,7 @@ export default StyleSheet.create({
         
         paddingHorizontal:moderateScale(20.83),
         paddingVertical: moderateScale(8),
-        borderRadius:moderateScale(12)
+        borderRadius:moderateScale(12),
     },
     button: {
         backgroundColor: "transparent",

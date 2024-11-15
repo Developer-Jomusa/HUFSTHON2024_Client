@@ -7,6 +7,7 @@ import u from "../style/UtilityStyles.tsx";
 import ProgressDot from "../component/ProgressDot.tsx";
 import BasicText from "../component/BasicText.tsx";
 import BasicButton from "../component/BasicButton.tsx";
+import UtilityStyles from "../style/UtilityStyles.tsx";
 
 const Onboarding = ({ navigation }: any) => {
     const [step, setStep] = useState(0);
@@ -62,14 +63,13 @@ const Onboarding = ({ navigation }: any) => {
                     <BasicText stringKey={onboardingData[step].subtitle} style={[u.fc_gray, u.fs_tiny, u.fw_600]} />
                 </Animated.View>
                 <BasicButton
-                    style={OnboardingStyle.NextBtton}
-                    text={'next'}
-                    textSize={12}
-                    textWeight={'700'}
+                    buttonStyle={OnboardingStyle.NextBtton}
+                    textStyle={[UtilityStyles.fs_small,UtilityStyles.fw_700]}
+                    stringKey={'next'}
                     onPress={handleNext}
                     disabled={false}
                     enabledColor='#006FFD/#FFFFFF/#D3D3D3'
-
+                    disabledColor="//"
                 />
             </View>
         </View>

@@ -40,9 +40,9 @@ const stylesheet = StyleSheet.create({
         borderRadius: Number.MAX_SAFE_INTEGER,
     },
     rowAndCentered: {
-        gap: moderateScale(10),
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent : 'center'
     },
     JuaFont:{
         fontFamily: "Jua-Regular",

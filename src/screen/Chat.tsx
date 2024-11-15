@@ -9,7 +9,8 @@ import UtilityStyles from "../style/UtilityStyles.tsx";
 import stylesheet from "../style/stylesheet.tsx";
 
 const Chat = ({ navigation }: any) => {
-    const [selectedButton, setSelectedButton] = useState('chat_start'); // 선택된 버튼
+    const [selectedButton, setSelectedButton] = useState('chat_start');
+    
     const chat = {
         chat_header:"chat_header",
         chat_start:"chat_start",
@@ -38,12 +39,10 @@ const Chat = ({ navigation }: any) => {
         { svg: "person5" as keyof typeof SVG, name: chat.chat_person5, message: chat.chat_chat5 },
     ];
     
-    // 상태 변경 함수
     const handleButtonClick = (button: string) => {
         setSelectedButton(button);
     };
 
-    // 다음 화면으로 이동
     const handleNext = () => {
         navigation.navigate("Chatting");
     };
@@ -95,7 +94,6 @@ const Chat = ({ navigation }: any) => {
                                name={expert.svg as keyof typeof SVG}
                                width={moderateScale(47)}
                                height={moderateScale(47)}
-    
                            />
                             <View style={ChatStyle.chatText}>
                                 <BasicText
