@@ -8,6 +8,7 @@ import {moderateScale} from "../util/ScreenScaler.tsx";
 import BasicText from "../component/BasicText.tsx";
 import UtilityStyles from "../style/UtilityStyles.tsx";
 import ChatBubble from "react-native-chat-bubble";
+import stylesheet from "../style/stylesheet.tsx";
 
 const Chatting = ({navigation}: any) => {
 
@@ -28,12 +29,12 @@ const Chatting = ({navigation}: any) => {
             console.warn("Unity send function is not ready");
         }
     };
+
+    //<Unity style={ChattingStyle.UnityContainer} onSendMessage={(sendToUnity) => { sendToUnityRef.current = sendToUnity;}}/>
     
     return (
-        <SafeAreaView style={ChattingStyle.MainContainer}>
-            <Unity style={ChattingStyle.UnityContainer} onSendMessage={(sendToUnity) => {
-                sendToUnityRef.current = sendToUnity;
-            }}/>
+        <SafeAreaView style={[ChattingStyle.MainContainer,stylesheet.AndroidSafeArea]}>
+            
             <View style={ChattingStyle.ContentContainer}>
                 <View style={ChattingStyle.TitleContainer}>
                     <SVG name={"next"} style={UtilityStyles.flipX} fill={"#006FFD"} width={moderateScale(20)} height={moderateScale(20)}/>

@@ -1,5 +1,5 @@
 ﻿import {moderateScale} from "../util/ScreenScaler.tsx";
-import {StyleSheet} from 'react-native';
+import {Platform, StatusBar, StyleSheet} from 'react-native';
 
 
 const stylesheet = StyleSheet.create({
@@ -46,6 +46,11 @@ const stylesheet = StyleSheet.create({
     },
     JuaFont:{
         fontFamily: "Jua-Regular",
+    },
+    AndroidSafeArea: {
+        flex: 1,
+        backgroundColor: "white",
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     }
 });
 
