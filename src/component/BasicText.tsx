@@ -45,7 +45,7 @@ const BasicText = ({ stringKey,stringValue,children,...props} : RNTextProps) => 
     }) as TextStyle;
 
     // 4. key 값이 없으면, @를 붙혀 key 값을 노출.
-    const options = { defaultValue: `@${stringKey}` };
+    const options = { defaultValue: `${stringKey}` };
     Object.assign(options, stringValue);
     const text = stringKey ? t(stringKey, options) : children;
 

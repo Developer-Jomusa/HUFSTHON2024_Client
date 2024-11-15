@@ -59,30 +59,30 @@ const Chat = ({ navigation }: any) => {
             {/* 상단 탭 버튼 */}
             <View style={ChatStyle.bar}>
                 <BasicButton
-                    text={chat.chat_start}
-                    textSize={12}
-                    textWeight={'700'}
+                    buttonStyle={ChatStyle.btn}
+                    textStyle={[UtilityStyles.fs_tiny,UtilityStyles.fw_700]}
+                    stringKey={chat.chat_start}
+                    disabled={false}
                     onPress={() => handleButtonClick(chat.chat_start)}
-                    enabledColor={selectedButton === 'chat_start' ? '#FFFFFF/#000000/' : 'none/#71727A/'}
-                    style={ChatStyle.btn}
+                    enabledColor={selectedButton === 'chat_start' ? '#FFFFFF/#000000/' : '#00000000/#71727A/'}
                 />
                 <Text style={ChatStyle.divide}>|</Text>
                 <BasicButton
-                    text={chat.chat_ing}
-                    textSize={12}
-                    textWeight={'700'}
+                    buttonStyle={ChatStyle.btn}
+                    textStyle={[UtilityStyles.fs_tiny,UtilityStyles.fw_700]}
+                    stringKey={chat.chat_ing}
+                    disabled={false}
                     onPress={() => handleButtonClick(chat.chat_ing)}
-                    enabledColor={selectedButton === 'chat_ing' ? '#FFFFFF/#000000/' : 'none/#71727A/'}
-                    style={ChatStyle.btn}
+                    enabledColor={selectedButton === 'chat_ing' ? '#FFFFFF/#000000/' : '#00000000/#71727A/'}
                 />
                 <Text style={ChatStyle.divide}>|</Text>
                 <BasicButton
-                    text={chat.chat_end}
-                    textSize={12}
-                    textWeight={'700'}
+                    buttonStyle={ChatStyle.btn}
+                    textStyle={[UtilityStyles.fs_tiny,UtilityStyles.fw_700]}
+                    stringKey={chat.chat_end}
+                    disabled={false}
                     onPress={() => handleButtonClick(chat.chat_end)}
-                    enabledColor={selectedButton === 'chat_end' ? '#FFFFFF/#000000/' : 'none/#71727A/'}
-                    style={ChatStyle.btn}
+                    enabledColor={selectedButton === 'chat_end' ? '#FFFFFF/#000000/' : '#00000000/#71727A/'}
                 />
             </View>
 
@@ -106,11 +106,10 @@ const Chat = ({ navigation }: any) => {
                                 />
                             </View>
                             <BasicButton
-                                text={chat.chat_startBtn}
-                                textSize={12}
-                                textWeight={'700'}
+                                buttonStyle={ChatStyle.enterChatButton}
+                                stringKey={chat.chat_startBtn}
+                                textStyle={[UtilityStyles.fs_tiny,UtilityStyles.fw_700]}
                                 onPress={handleNext}
-                                style={ChatStyle.enterChatButton}
                                 enabledColor='#7C92FF/#FFFFFF/'
                             />
                         </View>
@@ -130,10 +129,9 @@ const Chat = ({ navigation }: any) => {
                 <BasicText stringKey={chat.chat_noEndChat} style={ChatStyle.mainText} />
                 <BasicText stringKey={chat.chat_startChatNow} style={ChatStyle.startChatNow} />
                 <BasicButton
-                    style={ChatStyle.startChat}
-                    text={chat.chat_startNow}
-                    textSize={12}
-                    textWeight={'700'}
+                    buttonStyle={ChatStyle.startChat}
+                    textStyle={[UtilityStyles.fs_tiny,UtilityStyles.fw_700]}
+                    stringKey={chat.chat_startNow}
                     onPress={handleGoToStart}
                     enabledColor='#006FFD/#FFFFFF/'
                 />

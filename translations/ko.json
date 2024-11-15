@@ -52,5 +52,6 @@
   "profile_nickname": "더드밍",
   "profile_edit": "내 정보 수정",
   "profile_destroy": "데이터 지우기",
-  "profile_bub": "이용약관 및 개인정보처리방침"
+  "profile_bub": "이용약관 및 개인정보처리방침",
+  "chatting_input": "메시지를 입력하세요"
 }

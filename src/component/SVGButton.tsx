@@ -14,22 +14,22 @@ export interface BasicButtonProps {
     disabled: boolean;
     enabledColor?: string;
     disabledColor?: string;
-    svgName?: SVGIconProps["name"]; // 수정된 부분: SVG 이름 타입 연결
+    svgName?: SVGIconProps["name"];
     svgSize?: number;
+    fill?: string;
 }
 
 const SVGButton = ({
-    style,
-    text,
-    onPress,
-    disabled,
-    enabledColor = "#FFFFFF/#000000/#000000",
-    disabledColor = "#D3D3D3/#000000/#D3D3D3",
-    svgName,
-    svgSize = 24,
-
-}: BasicButtonProps) => {
-
+                       style,
+                       text,
+                       onPress,
+                       disabled,
+                       enabledColor = "#FFFFFF/#000000/#000000",
+                       disabledColor = "#D3D3D3/#000000/#D3D3D3",
+                       svgName,
+                       svgSize = 24,
+                       fill,
+                   }: BasicButtonProps) => {
     const parseColor = (color: string) => {
         const colors = color?.split("/") || ["#ffffff", "#000000", "transparent"];
         return {
@@ -49,7 +49,6 @@ const SVGButton = ({
             style={[
                 styles.basicRound,
                 style,
-               
             ]}
             disabled={disabled}
         >
@@ -59,11 +58,10 @@ const SVGButton = ({
                         name={svgName}
                         width={moderateScale(svgSize)}
                         height={moderateScale(svgSize)}
-                        fill={textColor}
-                        style={{ marginRight: text ? moderateScale(8)  : moderateScale(0) }}
+                        fill={fill || textColor}
+                        style={{ marginRight: text ? moderateScale(8) : moderateScale(0) }}
                     />
                 )}
-              
             </View>
         </TouchableOpacity>
     );
