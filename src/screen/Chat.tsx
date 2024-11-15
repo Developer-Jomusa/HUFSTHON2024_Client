@@ -5,6 +5,8 @@ import BasicText from '../component/BasicText';
 import BasicButton from '../component/BasicButton';
 import SVG from "../component/SVG.tsx";
 import {moderateScale} from "../util/ScreenScaler.tsx";
+import UtilityStyles from "../style/UtilityStyles.tsx";
+import stylesheet from "../style/stylesheet.tsx";
 
 const Chat = ({ navigation }: any) => {
     const [selectedButton, setSelectedButton] = useState('chat_start'); // 선택된 버튼
@@ -50,9 +52,9 @@ const Chat = ({ navigation }: any) => {
        
     };
     return (
-        <SafeAreaView style={ChatStyle.MainContainer}>
+        <SafeAreaView style={[ChatStyle.MainContainer,stylesheet.AndroidSafeArea]}>
             <View style={ChatStyle.header}>
-                <BasicText stringKey={chat.chat_header} style={ChatStyle.headerText} />
+                <BasicText stringKey={chat.chat_header} style={[ChatStyle.headerText,UtilityStyles.fc_black]} />
             </View>
 
             {/* 상단 탭 버튼 */}
@@ -98,11 +100,11 @@ const Chat = ({ navigation }: any) => {
                             <View style={ChatStyle.chatText}>
                                 <BasicText
                                     stringKey={expert.name}
-                                    style={ChatStyle.chatPerson}
+                                    style={[ChatStyle.chatPerson,UtilityStyles.fc_black,UtilityStyles.fw_700,UtilityStyles.fs_little]}
                                 />
                                 <BasicText
                                     stringKey={expert.message}
-                                    style={ChatStyle.chatMessage}
+                                    style={[ChatStyle.chatMessage,UtilityStyles.fw_500,UtilityStyles.fs_tiny]}
                                 />
                             </View>
                             <BasicButton

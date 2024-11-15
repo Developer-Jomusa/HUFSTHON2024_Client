@@ -92,12 +92,9 @@ export default StyleSheet.create({
         width: moderateScale(179)
     },
     chatPerson: {
-        fontSize: moderateScale(12),
-        fontWeight: '700',
         marginBottom: moderateScale(4),
     },
     chatMessage: {
-        fontSize: moderateScale(12),
         color: '#71727A',
         marginBottom: moderateScale(8),
     },
