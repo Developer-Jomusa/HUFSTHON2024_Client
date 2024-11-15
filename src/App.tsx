@@ -11,6 +11,8 @@ import Login from "./screen/Login.tsx";
 import SignUp from './screen/SignUp.tsx';
 import MainTabs from "./screen/MainTabs.tsx";
 import Chatting from './screen/Chatting.tsx';
+import axios, {AxiosResponse, InternalAxiosRequestConfig} from "axios";
+import {errorLogger, requestLogger, responseLogger} from "axios-logger";
 function App(): React.JSX.Element {
     useEffect(() => {
         if (Platform.OS === 'android') {
@@ -19,7 +21,12 @@ function App(): React.JSX.Element {
         }
         StatusBar.setBarStyle('dark-content');
         StatusBar.setHidden(false);
-    }, []);
+
+        const setInterceptor = setupAxiosInterceptors();
+        return () => {
+            setInterceptor();
+        };
+        }, []);
 
     const Stack = createNativeStackNavigator();
 
@@ -30,6 +37,31 @@ function App(): React.JSX.Element {
             background: 'white',
         },
     };
+
+    const setupAxiosInterceptors = () => {
+
+        axios.defaults.timeout = 10000;
+
+        const requestInterceptors = axios.interceptors.request.use(
+            (request: InternalAxiosRequestConfig) => {
+                return requestLogger(request);
+            },
+            (error) => {
+                return Promise.reject(error);
+            }
+        );
+
+        const responseInterceptors = axios.interceptors.response.use(
+            (response: AxiosResponse) => responseLogger(response),
+            (error) => errorLogger(error)
+        );
+
+
+        return () => {
+            axios.interceptors.request.eject(requestInterceptors);
+            axios.interceptors.response.eject(responseInterceptors);
+        };
+    }
 
     return (
         <SafeAreaProvider>

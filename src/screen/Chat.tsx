@@ -7,6 +7,8 @@ import SVG from "../component/SVG.tsx";
 import {moderateScale} from "../util/ScreenScaler.tsx";
 import UtilityStyles from "../style/UtilityStyles.tsx";
 import stylesheet from "../style/stylesheet.tsx";
+import {createChatRoom} from "../api";
+import {useUserState} from "../store/UserStore.ts";
 
 const Chat = ({ navigation }: any) => {
     const [selectedButton, setSelectedButton] = useState('chat_start');
@@ -43,9 +45,25 @@ const Chat = ({ navigation }: any) => {
         setSelectedButton(button);
     };
 
-    const handleNext = () => {
-        navigation.navigate("Chatting");
+    const userState = useUserState();
+    const createChatRoomRequest = async () => {
+        const requestData = {
+            roomName: "Samplename",
+            username : userState.name,
+        };
+
+        try {
+            const response = await createChatRoom(requestData);
+            console.log("채팅방 생성 성공:", response);
+            console.log("Room ID:", response.roomId);
+            console.log("WebSocket URL:", response.webSocketUrl);
+            userState.setWebsocketUrl(response.webSocketUrl);
+            navigation.navigate("Chatting");
+        } catch (error) {
+            console.error("채팅방 생성 실패:", error);
+        }
     };
+    
     const handleGoToStart =()=>{
         setSelectedButton(chat.chat_start);
        
@@ -109,7 +127,7 @@ const Chat = ({ navigation }: any) => {
                                 buttonStyle={ChatStyle.enterChatButton}
                                 stringKey={chat.chat_startBtn}
                                 textStyle={[UtilityStyles.fs_tiny,UtilityStyles.fw_700]}
-                                onPress={handleNext}
+                                onPress={()=>{createChatRoomRequest().then()}}
                                 enabledColor='#7C92FF/#FFFFFF/'
                             />
                         </View>

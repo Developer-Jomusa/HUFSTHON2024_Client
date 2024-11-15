@@ -19,7 +19,7 @@
   "login_other": "혹은 소셜 계정으로 시작하기",
   "signup_greeting":"이름이 뭐예요?",
   "signup_typing":"닉네임을 입력해 주세요.",
-  "signup_confirm":"내 이름이야, 기억해줘!",
+  "signup_confirm":"내 정보야, 기억해줘!",
   "signup_problem":"무슨 문제가 있으세요?",
   "signup_select1":"분리불안",
   "signup_select2":"우울증",
@@ -53,5 +53,7 @@
   "profile_edit": "내 정보 수정",
   "profile_destroy": "데이터 지우기",
   "profile_bub": "이용약관 및 개인정보처리방침",
-  "chatting_input": "메시지를 입력하세요"
+  "chatting_input": "메시지를 입력하세요",
+  "signup_email_greeting": "이메일은 뭐야?",
+  "signup_email_typing": "이메일을 입력하세요"
 }

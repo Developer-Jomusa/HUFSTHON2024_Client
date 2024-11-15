@@ -1,9 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
     SafeAreaView,
     View,
     StyleSheet,
-    TextInput,
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
@@ -16,9 +15,11 @@ import UtilityStyles from "../style/UtilityStyles.tsx";
 import ChattingStyle from "../style/Chatting.style.tsx";
 import { moderateScale } from "../util/ScreenScaler.tsx";
 import ChatBubble from "react-native-chat-bubble";
-import stylesheet from "../style/stylesheet.tsx";
 import SVGButton from "../component/SVGButton.tsx";
 import BasicInput from "../component/BasicInput.tsx";
+import {setupWebSocket} from "../api";
+import stylesheet from "../style/stylesheet.tsx";
+import {useUserState} from "../store/UserStore.ts";
 
 interface Message {
     content: string;
@@ -40,41 +41,29 @@ export enum Emotion {
 const Chatting = ({ navigation }: any) => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [inputText, setInputText] = useState<string>("");
-
-    
-
     const sendToUnityRef = useRef<(data: InterfaceData) => void>();
-    const scrollRef = useRef<ScrollView>(null)
-    
+    const scrollRef = useRef<ScrollView>(null);
+
+    const userState = useUserState();
+    // WebSocket 관련 상태
+    const [webSocket, setWebSocket] = useState<ReturnType<typeof setupWebSocket> | null>(null);
+
+    // 메시지 추가 함수
     const addMessage = (content: string, isOwnMessage: boolean) => {
         setMessages((prev) => [...prev, { content, isOwnMessage }]);
     };
 
+    // 메시지 전송 처리
     const handleSendMessage = (isOwnMessage: boolean) => {
-        if (inputText.trim()) {
-            const emotionMatch = inputText.match(/^emotion:(\w+)$/);
-            if (emotionMatch) {
-                const emotionName = emotionMatch[1];
-                const emotionValue = Emotion[emotionName as keyof typeof Emotion];
-                if (emotionValue !== undefined) {
-                    playEmotion(emotionValue);
-                } else {
-                    console.warn(`Unknown emotion: ${emotionName}`);
-                }
-                addMessage(inputText, isOwnMessage);
-                scrollRef?.current?.scrollToEnd({animated:true});
-            } else {
-                addMessage(inputText, isOwnMessage);
-                scrollRef?.current?.scrollToEnd({animated:true});
-            }
-
-            setInputText("");
+        if (webSocket && inputText.trim() !== "") {
+            webSocket.sendMessage(inputText); // WebSocket으로 메시지 전송
+            addMessage(inputText, true); // 내 메시지 추가
+            setInputText(""); // 입력창 초기화
         }
     };
 
-    
-    const playEmotion = (emotion: Emotion)=>{
-
+    // Unity와 연동된 감정 표현 처리
+    const playEmotion = (emotion: Emotion) => {
         const sendData: InterfaceData = {
             name: "N2U_NTY_ExpressEmotion",
             data: JSON.stringify({ emotionType: emotion }),
@@ -82,8 +71,25 @@ const Chatting = ({ navigation }: any) => {
         if (sendToUnityRef.current) {
             sendToUnityRef.current(sendData);
         }
-    }
+    };
 
+    // WebSocket 설정 및 메시지 수신 처리
+    useEffect(() => {
+        const webSocketInstance = setupWebSocket(
+            userState.websocketUrl, // WebSocket 서버 URL
+            (message: string) => {
+                // 수신 메시지 처리
+                addMessage(message, false);
+                scrollRef.current?.scrollToEnd({ animated: true });
+            }
+        );
+
+        setWebSocket(webSocketInstance);
+
+        return () => {
+            webSocketInstance.closeConnection(); // 컴포넌트가 언마운트될 때 WebSocket 연결 종료
+        };
+    }, []);
 
     return (
         <SafeAreaView style={[ChattingStyle.MainContainer, stylesheet.AndroidSafeArea]}>
@@ -91,8 +97,11 @@ const Chatting = ({ navigation }: any) => {
                 behavior={Platform.OS === "ios" ? "padding" : undefined}
                 style={ChattingStyle.MainContainer}
             >
-                <Unity style={ChattingStyle.UnityContainer} onSendMessage={(sendToUnity) => { sendToUnityRef.current = sendToUnity;}}/>                
-                
+                <Unity
+                    style={ChattingStyle.UnityContainer}
+                    onSendMessage={(sendToUnity) => { sendToUnityRef.current = sendToUnity; }}
+                />
+
                 <View style={ChattingStyle.ContentContainer}>
                     <View style={ChattingStyle.TitleContainer}>
                         <SVGButton
@@ -120,20 +129,13 @@ const Chatting = ({ navigation }: any) => {
                         />
                     </View>
 
-                    <ScrollView
-                        style={ChattingStyle.ChatContainer}
-                        ref={scrollRef}
-                    >
+                    <ScrollView style={ChattingStyle.ChatContainer} ref={scrollRef}>
                         {messages.map((message, index) => (
                             <ChatBubble
                                 key={index}
                                 isOwnMessage={message.isOwnMessage}
-                                bubbleColor={
-                                    message.isOwnMessage ? "#006FFD" : "#FFFFFF"
-                                }
-                                tailColor={
-                                    message.isOwnMessage ? "#006FFD" : "#FFFFFF"
-                                }
+                                bubbleColor={message.isOwnMessage ? "#006FFD" : "#FFFFFF"}
+                                tailColor={message.isOwnMessage ? "#006FFD" : "#FFFFFF"}
                                 withTail={true}
                             >
                                 <BasicText
@@ -162,11 +164,7 @@ const Chatting = ({ navigation }: any) => {
                         />
                         <TouchableOpacity
                             style={ChattingStyle.SendButton}
-                            onPress={()=>{
-                                //임시 처리 (TODO:: 웹소켓)
-                                const isOwnMessage = Math.random() < 0.5;
-                                handleSendMessage(isOwnMessage);
-                            }}
+                            onPress={() => handleSendMessage(true)}
                         >
                             <SVG
                                 name={"send"}
