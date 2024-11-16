@@ -29,3 +29,5 @@ i18n.use(initReactI18next).init({
         useSuspense: false,
     },
 });
+
+export default i18n;

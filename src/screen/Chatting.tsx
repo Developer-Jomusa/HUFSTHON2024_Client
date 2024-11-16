@@ -115,7 +115,7 @@ const Chatting = ({ navigation }: any) => {
                             fill={"#006FFD"}
                         />
                         <BasicText
-                            stringKey={"심리전문가 이은성"}
+                            stringKey={"chatting_name"}
                             style={[
                                 UtilityStyles.fc_black,
                                 UtilityStyles.fs_little,

@@ -21,4 +21,20 @@ export { default as person2 } from './person2.svg';
 export { default as person3 } from './person3.svg';
 export { default as person4 } from './person4.svg';
 export { default as person5 } from './person5.svg';
+export { default as person6 } from './person6.svg';
+export { default as person7 } from './person7.svg';
+export { default as person8 } from './person8.svg';
+export { default as person9 } from './person9.svg';
+export { default as person10 } from './person10.svg';
+export { default as person11 } from './person11.svg';
+export { default as person12 } from './person12.svg';
+export { default as person13 } from './person13.svg';
+export { default as person14 } from './person14.svg';
+export { default as person15 } from './person15.svg';
+export { default as language } from './Language.svg';
+export { default as country } from './Country.svg';
+
+
+
 export { default as send } from './send.svg';
+export { default as star } from './Star.svg';

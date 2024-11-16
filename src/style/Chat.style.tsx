@@ -103,6 +103,24 @@ export default StyleSheet.create({
         paddingVertical: moderateScale(6),
         borderRadius: moderateScale(7),
     },
-    
+    stars:{
+        flexDirection:'row'
+    },
+    star:{
+        marginLeft:moderateScale(5)
+    },
+    score:{
+        fontSize: moderateScale(13),
+        fontWeight:'700',
+        marginLeft:moderateScale(2)
+    },
+    language:{
+        flexDirection:'row',
+        justifyContent:'flex-end',
+        marginRight:moderateScale(10),
+    },
+    country:{
+        marginRight:moderateScale(10)
+    }
 });
 

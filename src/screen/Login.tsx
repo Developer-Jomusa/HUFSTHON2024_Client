@@ -124,8 +124,9 @@ const Login = ({navigation}: any) => {
                                     handleLoginUser(email,password);
                                 }}
                                 disabled={!isCanNext}
-                                enabledColor='#006FFD/#FFFFFF/#D3D3D3'
-                                disabledColor="#99CCFD/#FFFFFF/#D3D3D3"
+                                enabledColor='#FCF596/#000000/#D3D3D3'
+                                disabledColor='#E0E0E0/#A0A0A0/#BDBDBD'
+
                             />
 
                         </View>

@@ -118,8 +118,8 @@ const SignUp = ({ navigation }: any) => {
                                     stringKey={signUp.confirm}
                                     onPress={handleNextStep}
                                     disabled={step === 0 ? !email : !nickname}
-                                    enabledColor='#006FFD/#FFFFFF/#D3D3D3'
-                                    disabledColor="#99CCFD/#FFFFFF/#D3D3D3"
+                                    enabledColor='#FCF596/#000000/#D3D3D3'
+                                    disabledColor='#E0E0E0/#A0A0A0/#BDBDBD'
                                 />
                             </View>
                         </View>
@@ -159,7 +159,7 @@ const SignUp = ({ navigation }: any) => {
                                         handleRegisterUser(email,nickname,'a123456789')
                                     }}
                                     disabled={selectedOptions.length == 0}
-                                    enabledColor='#006FFD/#FFFFFF/'
+                                    enabledColor='#FCF596/#000000/#D3D3D3'
                                 />
                             </View>
                         </View>

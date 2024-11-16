@@ -68,7 +68,7 @@ const Onboarding = ({ navigation }: any) => {
                     stringKey={'next'}
                     onPress={handleNext}
                     disabled={false}
-                    enabledColor='#006FFD/#FFFFFF/#D3D3D3'
+                    enabledColor='#FCF596/#000000/#D3D3D3'
                     disabledColor="//"
                 />
             </View>
