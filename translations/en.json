@@ -1,39 +1,39 @@
 ﻿{
-  "onboarding_title1": "Don't worry about living in Korea alone anymore.",
-  "onboarding_sub1": "Enjoy 1:1 consultations with Korean experts and communicate comfortably in your native language through real-time translation.",
+  "onboarding_title1": "Confused about Korean college admissions? We'll make it easy for you!",
+  "onboarding_sub1": "From complex admission procedures to personalized strategies, let our experts help you plan for successful admission.",
 
-  "onboarding_title2": "Find tailored support here to overcome language and cultural barriers.",
-  "onboarding_sub2": "From legal advice to living tips and recycling issues, various consultations make life in Korea easier for you.",
+  "onboarding_title2": "Let us, 'Majoobom,' help you!",
+  "onboarding_sub2": "From language and culture to daily living tips, access diverse tailored consultation services for multicultural families in one place.",
 
-  "onboarding_title3": "Join a trusted community to share concerns and find solutions.",
-  "onboarding_sub3": "Get remote consultation services with certified local consultants in Seoul and Gyeongin areas, whenever you need help.",
+  "onboarding_title3": "Find solutions and share concerns in a trusted community.",
+  "onboarding_sub3": "With certified local consultants in Seoul and Gyeongin areas, receive reliable remote consultation services whenever you need them.",
 
   "next": "Next",
   "login_title": "Welcome to HUFSTHON!",
-  "login_email": "Enter your email",
-  "login_password": "Enter your password",
+  "login_email": "Please enter your email",
+  "login_password": "Please enter your password",
   "login_forget_pw": "Forgot your password?",
   "login_button": "Login",
-  "login_isUser": "Not a member?",
+  "login_isUser": "Not a member yet?",
   "login_regist": "Sign Up",
   "login_other": "Or start with a social account",
   "signup_greeting": "What’s your name?",
   "signup_typing": "Please enter your nickname.",
   "signup_confirm": "This is my info, remember me!",
-  "signup_problem": "What seems to be the problem?",
+  "signup_problem": "What’s your problem?",
 
   "signup_select1": "College Admission",
   "signup_select2": "Mentoring",
   "signup_select3": "Education",
-  "signup_select4": "Other",
-  "signup_select5": "ADHD",
+  "signup_select4": "Emotional Support",
+  "signup_select5": "Others",
 
   "signup_selectconfirm": "Selection Complete!",
   "chat_header": "AI Chat",
 
-  "menu1": "College",
+  "menu1": "College Counseling",
   "menu2": "Mentoring",
-  "menu3": "Education",
+  "menu3": "Education Counseling",
   
   "chat_person1": "Lee Eunseong",
   "chat_person2": "Lee Yungui",
@@ -83,5 +83,5 @@
   "signup_email_greeting": "What’s your email?",
   "signup_email_typing": "Please enter your email.",
 
-   "chatting_name":"College Counselor Lee Eunseong"
+  "chatting_name": "College Counselor Lee Eunseong"
 }
