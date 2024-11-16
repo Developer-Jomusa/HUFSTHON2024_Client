@@ -37,7 +37,7 @@ const Login = ({navigation}: any) => {
     
     const handleLoginUser = async (email: string, password: string): Promise<void> => {
         const loginData: LoginRequest = { email, password };
-
+        
         try {
             const response = await loginUser(loginData);
             userState.setName(response.username);

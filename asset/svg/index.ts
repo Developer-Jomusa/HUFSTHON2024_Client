@@ -22,3 +22,6 @@ export { default as person3 } from './person3.svg';
 export { default as person4 } from './person4.svg';
 export { default as person5 } from './person5.svg';
 export { default as send } from './send.svg';
+export { default as Community } from './Community.svg';
+export { default as univercity1 } from './univercity1.svg';
+export { default as univercity2 } from './univercity2.svg';

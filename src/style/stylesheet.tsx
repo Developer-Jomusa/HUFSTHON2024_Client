@@ -7,10 +7,10 @@ const stylesheet = StyleSheet.create({
         height: moderateScale(55)
     },
     emptyView2: {
-        height: moderateScale(0)
+        height: moderateScale(16)
     },
     emptyView3: {
-        height: moderateScale(0)
+        height: moderateScale(24)
     },
     emptyView4: {
         height: moderateScale(0)
