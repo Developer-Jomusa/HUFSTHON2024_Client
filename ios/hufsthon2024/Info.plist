@@ -26,10 +26,16 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<false/>
-		<key>NSAllowsLocalNetworking</key>
-		<true/>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
+	<key>NSExceptionDomains</key>
+	<dict>
+	<key>http://geugol.site</key>
+	<dict>
+	<key>NSExceptionAllowsInsecureHTTPLoads</key>
+	<true/>
+	</dict>
+	</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
