@@ -33,8 +33,8 @@ export { default as person14 } from './person14.svg';
 export { default as person15 } from './person15.svg';
 export { default as language } from './Language.svg';
 export { default as country } from './Country.svg';
-
-
-
 export { default as send } from './send.svg';
+export { default as Community } from './Community.svg';
+export { default as univercity1 } from './univercity1.svg';
+export { default as univercity2 } from './univercity2.svg';
 export { default as star } from './Star.svg';

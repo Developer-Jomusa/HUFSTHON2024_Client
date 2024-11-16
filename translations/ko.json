@@ -7,7 +7,7 @@
 
   "onboarding_title3": "신뢰할 수 있는 커뮤니티에서 같은 고민을 나누고 해결책을 찾아보세요.",
   "onboarding_sub3": "서울 및 경인 지역에 거주하는 현지 인증 상담가와 함께하는 비대면 상담 서비스로, 언제든지 필요한 도움을 받을 수 있습니다.",
-  
+
   "next": "다음",
   "login_title":"HUFSTHON에 어서오세요!",
   "login_email":"이메일을 입력해주세요",
@@ -34,7 +34,7 @@
   "menu1":"입시상담",
   "menu2":"멘토링",
   "menu3":"교육상담",
-"chat_person1": "이은성",
+  "chat_person1": "이은성",
   "chat_person2": "이융의",
   "chat_person3": "김성진",
   "chat_person4": "최영호",
@@ -81,8 +81,7 @@
   "chatting_input": "메시지를 입력하세요",
   "signup_email_greeting": "이메일은 뭐야?",
   "signup_email_typing": "이메일을 입력하세요",
-
-  "chatting_name":"입시상담가 이은성"
-
-
+  "chatting_name":"입시상담가 이은성",
+  "community_title1": "모집요강",
+  "community_title2": "멘토링"
 }

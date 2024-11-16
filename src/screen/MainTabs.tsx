@@ -6,6 +6,7 @@ import Profile from "../screen/Profile";
 import SVG from "../component/SVG.tsx";
 import {moderateScale} from "../util/ScreenScaler.tsx";
 import {useTranslation} from "react-i18next";
+import Community from "./Community.tsx";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,6 +27,8 @@ const MainTabs = () => {
                             return <SVG name="Chat" fill={fillColor}/>;
                         case "Profile":
                             return <SVG name="Profile" fill={fillColor}/>;
+                        case "Community":
+                            return <SVG name="Community" fill={fillColor}/>;
                         default:
                             return null;
                     }
@@ -55,6 +58,7 @@ const MainTabs = () => {
             <Tab.Screen name="Explore" component={Explore}/>
             <Tab.Screen name="Chat" component={Chat}/>
             <Tab.Screen name="Profile" component={Profile}/>
+            <Tab.Screen name="Community" component={Community}/>
         </Tab.Navigator>
     );
 };
