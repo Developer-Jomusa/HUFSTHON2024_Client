@@ -9,7 +9,7 @@
   "onboarding_sub3": "서울 및 경인 지역에 거주하는 현지 인증 상담가와 함께하는 비대면 상담 서비스로, 언제든지 필요한 도움을 받을 수 있습니다.",
 
   "next": "다음",
-  "login_title":"HUFSTHON에 어서오세요!",
+  "login_title":"마주봄에 어서오세요!",
   "login_email":"이메일을 입력해주세요",
   "login_password":"비밀번호를 입력해주세요",
   "login_forget_pw": "비밀번호를 잊으셨나요?",
@@ -29,7 +29,7 @@
   "signup_select5":"기타",
 
   "signup_selectconfirm":"선택 완료!",
-  "chat_header":"AI대화",
+  "chat_header":"상담하기",
 
   "menu1":"입시상담",
   "menu2":"멘토링",
@@ -71,8 +71,9 @@
   "chat_startChatNow":"지금 대화를 시작해보세요!",
   "chat_startNow":"대화 시작하러 가기",
   "menu_explore": "탐색",
-  "menu_chat": "AI대화",
+  "menu_chat": "상담하기",
   "menu_profile": "내 프로필",
+  "menu_community": "더보기",
   "profile_title": "내 프로필",
   "profile_nickname": "더드밍",
   "profile_edit": "내 정보 수정",
@@ -83,5 +84,6 @@
   "signup_email_typing": "이메일을 입력하세요",
   "chatting_name":"입시상담가 이은성",
   "community_title1": "모집요강",
-  "community_title2": "멘토링"
+  "community_title2": "멘토링",
+  "community_title3": "다문화 전형"
 }

@@ -9,17 +9,18 @@ type Item = {
 };
 
 const items: Item[] = [
-    { id: '001', url: 'https://youtube.com/shorts/Uj74798gItc' },
-    { id: '002', url: 'https://youtube.com/shorts/HXyx8Sr5RTQ' },
-    { id: '003', url: 'https://youtube.com/shorts/QgAA_5IPNIs' },
-    { id: '004', url: 'https://youtube.com/shorts/GFAa6l5zbHE' },
-    { id: '005', url: 'https://youtube.com/shorts/-IcYublDy7I' },
-    { id: '006', url: 'https://youtube.com/shorts/6a1tmHi6d60' },
-    { id: '007', url: 'https://youtube.com/shorts/8Lt1hJnEcq0' },
-    { id: '008', url: 'https://youtube.com/shorts/266xNTZN5VI' },
-    { id: '009', url: 'https://youtube.com/shorts/xZ48_razkME' },
-    { id: '010', url: 'https://youtube.com/shorts/qoM9tP69USo' },
+    { id: '001', url: 'https://youtube.com/shorts/93407bfiEv4?si=jj--AxyRaXX7VQGP' },
+    { id: '002', url: 'https://youtube.com/shorts/KdHGTo652-s' },
+    { id: '003', url: 'https://youtube.com/shorts/WEVFfCEc3H8' },
+    { id: '004', url: 'https://youtube.com/shorts/6uk9VOzLS_4' },
+    { id: '005', url: 'https://youtube.com/shorts/wXzWfWaaJ54' },
+    { id: '006', url: 'https://youtube.com/shorts/kOVXJ5oRHBg' },
+    { id: '007', url: 'https://youtube.com/shorts/5j0gA25EsAo' },
+    { id: '008', url: 'https://youtube.com/shorts/1DLBKhvGrG4' },
+    { id: '009', url: 'https://youtube.com/shorts/8fNdV9VsXCc' },
+    { id: '010', url: 'https://youtube.com/shorts/hl7rBWD8ibI' },
 ];
+
 
 const Explore = ({ navigation }: any) => {
     const [showShorts, setShowShorts] = useState(false);

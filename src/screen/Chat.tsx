@@ -130,9 +130,9 @@ const Chat = ({ navigation }: any) => {
 
     return (
         <SafeAreaView style={[ stylesheet.AndroidSafeArea]}>
-            {/* <View style={ChatStyle.header}>
+            <View style={ChatStyle.header}>
                 <BasicText stringKey={chat.chat_header} style={[ChatStyle.headerText, UtilityStyles.fc_black]} />
-            </View> */}
+            </View>
             <View style={ChatStyle.language}>
                 <SVG
                     name={"country"}
